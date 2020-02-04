@@ -1,4 +1,6 @@
 import cv2
+import matplotlib.pyplot as pyplot
+import numpy as np
 
 
 def crop_img(img, x1, y1, x2, y2):

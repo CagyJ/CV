@@ -35,6 +35,8 @@ def img_perspectiveTransform(img, pts1, pts2, size=(500,500)):
     M = cv2.getPerspectiveTransform(pts1,pts2)
     return cv2.warpPerspective(img,M,size)
 
+
+#only for black-white image
 #erode
 erode_writing = cv2.erode(img_writing,None,iterations=2)
 

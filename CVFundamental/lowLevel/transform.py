@@ -28,6 +28,9 @@ pts2 = np.float32([[5,19],[19,460],[460,7],[410,420]])
 M = cv2.getPerspectiveTransform(pts1,pts2) 
 img_wart = cv2.warpPerspective(img_ori,M,(500,500)) 
 
+def img_perspectiveTransform(img, pts1, pts2, size=(500,500)):
+    M = cv2.getPerspectiveTransform(pts1,pts2)
+    return cv2.warpPerspective(img,M,size)
 
 #erode
 erode_writing = cv2.erode(img_writing,None,iterations=2)

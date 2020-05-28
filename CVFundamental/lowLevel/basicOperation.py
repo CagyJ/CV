@@ -9,6 +9,13 @@ def crop_img(img, x1, y1, x2, y2):
         return img[0:shape[0],0:shape[1]]
     return img[y1:y2, x1:x2]
 
+def img_flip(img,op):
+    new_img = cv2.flip(img,op)
+    return new_img
+#op:
+#0    上下翻转
+#1    左右翻转
+#-1   上下左右翻转
 
 def rotation(img, angle): 
     (h, w) = img.shape[:2]

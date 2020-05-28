@@ -5,6 +5,14 @@ from skimage import io
 from skimage import transform as tf 
 
 # similarity transform
+def img_similarityTransform(img,translation,rotation,scale):
+    rows, cols = img_ori.shape[:2]
+    M_translation = np.float32([[1,0,translation[0]],[0,1,translation[1]]])
+    translation_img = cv2.warpAffine(img,M_translation,(cols,rows))
+    M = cv2.getRotationMatrix2D((rows/2,cols/2),rotation,scale)
+    new_img = cv2.warpAffine(translation_img,M,(cols,rows))
+    return new_img
+
 def st(img, scale=1.8, rotation = np.deg2rad(9), translation=(-3,-100)):
     tform = tf.SimilarityTransform(scale, rotation, translation)
     st_img = tf.warp(img, tform)

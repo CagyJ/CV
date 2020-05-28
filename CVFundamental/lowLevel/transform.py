@@ -19,6 +19,9 @@ pts2 = np.float32([[cols * 0.2, rows * 0.1], [cols * 0.7, rows * 0.2], [cols * 0
 M = cv2.getAffineTransform(pts1, pts2)
 dst = cv2.warpAffine(img_ori, M, (cols, rows))
 
+def img_affineTransform(img,pts1,pts2):
+    M = cv2.getAffineTransform(pts1, pts2)
+    return cv2.warpAffine(img,M,(img.shape[0],img.shape[1]))
 
 
 #perspective transform

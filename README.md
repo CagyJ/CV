@@ -8,3 +8,7 @@ A repo for CV
 [Image transform, erode, dilate](https://github.com/CagyJ/CV/blob/master/ClassicCV/2transform.py) (Introduction three transforms of image and erode, dilate of image)
 
 [Image convolution, Gaussian Blur, Image sharpening, Median Blur, Harris Corner, SIFT](https://github.com/CagyJ/CV/blob/master/ClassicCV/3Convolution&FP.py)
+
+
+
+[Median Blur and SIFT](https://github.com/CagyJ/CV/blob/master/ClassicCV/4MB&SIFT.py)

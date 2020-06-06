@@ -11,4 +11,4 @@ A repo for CV
 
 
 
-[Median Blur and SIFT](https://github.com/CagyJ/CV/blob/master/ClassicCV/4MB&SIFT.py)
+[Median Blur](https://github.com/CagyJ/CV/blob/master/ClassicCV/4MedianBlur.py)

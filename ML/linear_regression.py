@@ -39,7 +39,7 @@ def loss_func(w,b,x_list,gt_y_list): #ground truth: 真实标签值
     return avg_loss
 
 
-def train(x_list,gt_y_list,batch_size,lr,max_iterations):
+def train(x_list,gt_y_list,batch_size,lr,max_iterations): 
     w,b = 0,0
     num_sample = len(x_list)
     for i in range(max_iterations):
@@ -64,10 +64,16 @@ def gen_sample_data():
     print(w,b)
     for i in range(num_sample):
         x = random.randint(0,100)*random.random()
-        y = w*x + b + random.random()*random.randint(-1,100)
+        y = w*x + b + random.random()*random.randint(-1,100)  #后者为填加的噪声
         x_list.append(x)
         y_list.append(y)
     return x_list,y_list
 
 x_list,y_list = gen_sample_data()
-train(x_list,y_list,batch_size=100,lr=0.0001,max_iterations=100)
+w,b = train(x_list,y_list,batch_size=100,lr=0.0001,max_iterations=100)  #batch size可大可小，learn rate学习率应与其同步改变以防数据爆炸（batch_size调大，lr应该调小）
+
+# display the diagram
+x = np.linspace(0,100)
+plt.plot(x,w*x+b,color = 'red')
+plt.scatter(x_list,y_list)
+plt.show()

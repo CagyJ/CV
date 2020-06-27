@@ -15,5 +15,8 @@ A repo for CV
 
 
 ## ML
-[Linear Regression](https://github.com/CagyJ/CV/blob/master/ML/linear_regression.py)
-[Linear Regression in np](https://github.com/CagyJ/CV/blob/master/ML/linear_regression_np.py)
+[Linear Regression](https://github.com/CagyJ/CV/blob/master/ML/linear/linear_regression.py)
+
+[Linear Regression in np](https://github.com/CagyJ/CV/blob/master/ML/linear/linear_regression_np.py)
+
+[Logistic Regression](https://github.com/CagyJ/CV/blob/master/ML/logistic/)

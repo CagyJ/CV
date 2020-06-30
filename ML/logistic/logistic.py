@@ -80,12 +80,13 @@ def train(x, batch_size, lr, max_iter):
         plt.xlim(np.min(x[:,0])*1.1, np.max(x[:,0]) * 1.1)
         plt.ylim(np.min(x[:,1])*1.1, np.max(x[:,1]) * 1.1)
         plt.scatter(x[:,0],x[:,1],c=x[:,2])
+        # y_axe*w2 + x_axe*w1 + b = Y
         y_axe = (-b - x_axe*w1) / w2
         plt.plot(x_axe,y_axe,linewidth=2)
         plt.title(f"Logistic Regression Iter: {i+1}")
         plt.pause(0.5)
         if i!=max_iter-1:
-            ax.cla()
+            ax.cla()  #关闭
     plt.ioff()
     plt.show()
     return w1,w2,b

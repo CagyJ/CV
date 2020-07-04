@@ -1,7 +1,7 @@
 import numpy as np 
 from math import sqrt
 from collections import Counter
-
+from ../Metrics/accurary_score import accurary_score
 
 class KNNClassifier:
 
@@ -41,6 +41,10 @@ class KNNClassifier:
         topK_y = [y_train[i] for i in nearest[:self.k]]
         votes = Counter(topK_y)
         return votes.most_common(1)[0][0]
+
+    def score(self, X_test, y_test):
+        y_predict = self.predict(X_test)
+        return accurary_score(y_test, y_predict)
     
     def __repr__(self):
         return f"KNN(k={self.k})"
@@ -68,4 +72,6 @@ x_predict = x.reshape(1,-1)
 knn_clf = KNNClassifier(k=6)
 knn_clf.fit(X_train, y_train)
 y_predict = knn_clf.predict(x_predict)
+
 print(y_predict[0])
+

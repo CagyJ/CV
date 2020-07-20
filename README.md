@@ -16,9 +16,14 @@ A repo for CV
 [RANSAC](https://github.com/CagyJ/CV/blob/master/ClassicCV/ransac.py)
 
 ## ML
+[kNN](https://github.com/CagyJ/CV/tree/master/ML/kNN)
+
 [Linear Regression](https://github.com/CagyJ/CV/blob/master/ML/linear/linear_regression.py)
 
 [Linear Regression in np](https://github.com/CagyJ/CV/blob/master/ML/linear/linear_regression_np.py)
 
 [Logistic Regression](https://github.com/CagyJ/CV/blob/master/ML/logistic/logistic.py)
 
+
+## Project
+[Image Stitching](https://github.com/CagyJ/CV/tree/master/project/image%20stitching)

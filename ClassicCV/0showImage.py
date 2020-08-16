@@ -13,15 +13,20 @@ def cv_show_img(img, name='image'):
 def show_color_img(img, size=(3, 3)):
     plt.figure(figsize=size)
     plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-    #plt.show()
+    plt.show()
 
 
 
-def show_gray_show(img, size=(10, 8)):
+def show_gray_img(img, size=(10, 8)):
     plt.figure(figsize=size)
     plt.imshow(img, cmap='gray')
     plt.show()
 
+def show_hsv_img(img, size=(3, 3)):
+    img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    plt.figure(figsize=size)
+    plt.imshow(img_hsv, cmap='hsv')
+    plt.show()
 
 img = cv2.imread("../images/lenna.jpg")
-show_color_img(img)
+show_hsv_img(img)

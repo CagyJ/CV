@@ -98,3 +98,16 @@ def color_shift(img, b, g, r):
         pass
     
     return cv2.merge((B,G,R))
+
+
+def cap_camera():
+    # begin
+    cap = cv2.VideoCapture(0)
+    return_value, frame = cap.read()
+    if return_value:
+        plt.imshow(frame)
+        plt.show()
+    # close
+    cap.release()
+
+cap_camera()

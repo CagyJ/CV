@@ -2,7 +2,16 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 from skimage import io 
-from skimage import transform as tf 
+from skimage import transform as tf
+
+
+# img movement: src_img, move_position(x, y), new_img_size
+def img_movement(img, position, dsize=(1000, 1000)):
+    M = np.float32([[1,0,position[0]], [0,1,position[1]]])
+    res = cv2.warpAffine(img, M, dsize)
+    plt.imshow(res)
+    plt.show()
+    return res 
 
 # similarity transform
 def img_similarityTransform(img,translation,rotation,scale):

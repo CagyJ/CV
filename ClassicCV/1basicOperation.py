@@ -2,12 +2,13 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+# range of interest: ROI
 def crop_img(img, x1, y1, x2, y2):
-    if (x1==x2 and y1 == y2):
+    if (x1 == x2 and y1 == y2):
         shape=img.shape
-        return img[0:shape[0],0:shape[1]]
+        return img[0:shape[0], 0:shape[1]]
     return img[y1:y2, x1:x2]
+
 
 def img_flip(img,op):
     new_img = cv2.flip(img,op)
@@ -27,6 +28,7 @@ def resize_img(img, width):
     ratio = width/img.shape[1]
     dimension = (int(width), int(img.shape[0]*ratio))
     return cv2.resize(img, dimension, interpolation = cv2.INTER_AREA)
+
 
 def img_cooler(img,b_increase,r_decrease):
     B,G,R = cv2.split(img)
@@ -100,14 +102,3 @@ def color_shift(img, b, g, r):
     return cv2.merge((B,G,R))
 
 
-def cap_camera():
-    # begin
-    cap = cv2.VideoCapture(0)
-    return_value, frame = cap.read()
-    if return_value:
-        plt.imshow(frame)
-        plt.show()
-    # close
-    cap.release()
-
-cap_camera()

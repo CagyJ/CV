@@ -13,6 +13,7 @@ def img_movement(img, position, dsize=(1000, 1000)):
     plt.show()
     return res 
 
+
 # similarity transform
 def img_similarityTransform(img,translation,rotation,scale):
     rows, cols = img_ori.shape[:2]

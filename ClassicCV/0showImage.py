@@ -16,17 +16,29 @@ def show_color_img(img, size=(3, 3)):
     plt.show()
 
 
-
 def show_gray_img(img, size=(10, 8)):
     plt.figure(figsize=size)
     plt.imshow(img, cmap='gray')
     plt.show()
+
 
 def show_hsv_img(img, size=(3, 3)):
     img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     plt.figure(figsize=size)
     plt.imshow(img_hsv, cmap='hsv')
     plt.show()
+
+
+def cap_camera():
+    # begin
+    cap = cv2.VideoCapture(0)
+    return_value, frame = cap.read()
+    if return_value:
+        plt.imshow(frame)
+        plt.show()
+    # close
+    cap.release()
+
 
 img = cv2.imread("../images/lenna.jpg")
 show_hsv_img(img)

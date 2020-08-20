@@ -1,5 +1,8 @@
 import numpy as np 
 import matplotlib.pyplot as plt
+import sys
+sys.path.append('../')
+from Metrics.metrics import r2_score
 
 class SimpleLinearRegression1:
 
@@ -78,6 +81,10 @@ class SimpleLinearRegression2:
     def _predict(self, x_single):
         return self.a_ * x_single + self.b_
     
+    def score(self, x_test, y_test):
+        y_predict = self.predict(x_test)
+        return r2_score(y_test, y_predict)
+    
     def __repr__(self):
         return "SimpleLinearRegression2()"
 
@@ -85,10 +92,11 @@ class SimpleLinearRegression2:
 if __name__ == "__main__":
     x = np.array([1., 2., 3., 4., 5.])
     y = np.array([1., 3., 2., 3., 5.])
-    reg1 = SimpleLinearRegression1()
+    reg1 = SimpleLinearRegression2()
     reg1.fit(x, y)
     # print(reg1.predict(np.array([6, 7])))
     plt.scatter(x, y)
     plt.plot(x, reg1.predict(x), color='r')
     plt.axis([0, 6, 0, 6])
     plt.show()
+    print(reg1.score(x, y))

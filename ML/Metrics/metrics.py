@@ -25,4 +25,11 @@ def mean_absolute_error(y_true, y_predict):
     assert len(y_true) == len(y_predict), \
         "the size of y_true must be equal to the size of y_predict"
 
-    return np.sum(np.absolute(y_predict - y_true)) / len(y_true) 
+    return np.sum(np.absolute(y_predict - y_true)) / len(y_true)
+
+def r2_score(y_true, y_predict):
+    """compute R square"""
+    return 1 - mean_squared_error(y_true, y_predict) / np.var(y_true)
+
+
+
